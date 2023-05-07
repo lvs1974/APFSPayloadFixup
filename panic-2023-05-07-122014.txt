@@ -1,0 +1,180 @@
+panic(cpu 0 caller 0xffffff8005b78b7e): "The global payload bytes pointer is NULL\n" com.apple.apfs_vfsops.c:2450
+Panicked task 0xffffff99f941a698: 118 threads: pid 0: kernel_task
+Backtrace (CPU 0), panicked thread: 0xffffff86c881d0c8, Frame : Return Address
+0xffffffd09a4d6ee0 : 0xffffff8002a705fd mach_kernel : _handle_debugger_trap + 0x4ad
+0xffffffd09a4d6f30 : 0xffffff8002bc4b84 mach_kernel : _kdp_i386_trap + 0x114
+0xffffffd09a4d6f70 : 0xffffff8002bb4619 mach_kernel : _kernel_trap + 0x3c9
+0xffffffd09a4d6fd0 : 0xffffff8002a10951 mach_kernel : _return_from_trap + 0xc1
+0xffffffd09a4d6ff0 : 0xffffff8002a708dd mach_kernel : _DebuggerTrapWithState + 0x5d
+0xffffffd09a4d70e0 : 0xffffff8002a6ff87 mach_kernel : _panic_trap_to_debugger + 0x1a7
+0xffffffd09a4d7140 : 0xffffff80031dd09b mach_kernel : _panic + 0x84
+0xffffffd09a4d7230 : 0xffffff8005b78b7e com.apple.filesystems.apfs : _apfs_vfsop_mount + 0x2e01
+0xffffffd09a4d7b80 : 0xffffff8005b82d4e com.apple.filesystems.apfs : _apfs_vfsop_mountroot + 0x3d
+0xffffffd09a4d7bb0 : 0xffffff8002c3d1f0 mach_kernel : _vfs_mountroot + 0x150
+0xffffffd09a4d7d40 : 0xffffff8002eeb307 mach_kernel : _set_rootvnode + 0x2ba7
+0xffffffd09a4d7f50 : 0xffffff8002aabf70 mach_kernel : _max_valid_stack_address + 0x2160
+0xffffffd09a4d7fa0 : 0xffffff8002a1019e mach_kernel : _call_continuation + 0x2e
+      Kernel Extensions in backtrace:
+         com.apple.filesystems.apfs(2142.101.3)[2CCE074B-5893-33A2-9046-C418A1C4337F]com.apple.0xffffff8005ae8000-com.apple.driver.0xffffff8005c77fff
+            dependency: com.apple.driver.AppleEFINVRAM(2.1)[7D81786A-064D-35CE-A62B-927AEADFB02B]com.apple.0xffffff8003e09000-com.apple.driver.0xffffff8003e12fff
+            dependency: com.apple.driver.AppleEffaceableStorage(1.0)[C3440029-A77E-3694-9EF3-FF91C5473291]com.apple.0xffffff8003e1f000-com.apple.driver.0xffffff8003e24fff
+            dependency: com.apple.iokit.CoreAnalyticsFamily(1)[7F555DBB-00BC-3E9B-A86B-099BDAFD9F60]com.apple.0xffffff800434f000-com.apple.driver.0xffffff8004358fff
+            dependency: com.apple.iokit.IOStorageFamily(2.1)[EA2A9009-708A-36D7-8AD6-829DEA8C4FE3]com.apple.0xffffff80055c5000-com.apple.driver.0xffffff80055dcfff
+            dependency: com.apple.kec.corecrypto(12.0)[DB809F2D-81A2-3B3F-A836-7DFD92D91539]com.apple.0xffffff8005cbd000-com.apple.driver.0xffffff8005d35fff
+            dependency: com.apple.security.AppleImage4(5.0.0)[939F8539-1BF4-3866-B2FF-C26A94E2A34B]com.apple.0xffffff8003ea9000-com.apple.driver.0xffffff8003ec7fff
+
+Process name corresponding to current thread (0xffffff86c881d0c8): kernel_task
+Boot args: keepsyms=1
+
+Mac OS version:
+Not yet set
+
+Kernel version:
+Darwin Kernel Version 22.4.0: Mon Mar  6 21:00:17 PST 2023; root:xnu-8796.101.5~3/RELEASE_X86_64
+Kernel UUID: CF2A42DA-3F7C-30C6-9433-6F2076FF1F94
+roots installed: 0
+KernelCache slide: 0x0000000002600000
+KernelCache base:  0xffffff8002800000
+Kernel slide:      0x00000000026dc000
+Kernel text base:  0xffffff80028dc000
+__HIB  text base: 0xffffff8002700000
+System model name: MacBookPro16,4 (Mac-A61BADE1FDAD7B05)
+System shutdown begun: NO
+Panic diags file unavailable, panic occurred prior to initialization
+Hibernation exit count: 0
+
+System uptime in nanoseconds: 7168016133
+Last Sleep:           absolute           base_tsc          base_nano
+  Uptime  : 0x00000001ab3f42d8
+  Sleep   : 0x0000000000000000 0x0000000000000000 0x0000000000000000
+  Wake    : 0x0000000000000000 0x0000000a156451fe 0x0000000000000000
+Compressor Info: 0% of compressed pages limit (OK) and 0% of segments limit (OK) with 0 swapfiles and OK swap space
+Zone info:
+  Zone map: 0xffffff805ee31000 - 0xffffffa05ee31000
+  . PGZ   : 0xffffff805ee31000 - 0xffffff8062e32000
+  . VM    : 0xffffff8062e32000 - 0xffffff852f165000
+  . RO    : 0xffffff852f165000 - 0xffffff86c87cb000
+  . GEN0  : 0xffffff86c87cb000 - 0xffffff8b94afe000
+  . GEN1  : 0xffffff8b94afe000 - 0xffffff9060e31000
+  . GEN2  : 0xffffff9060e31000 - 0xffffff952d164000
+  . GEN3  : 0xffffff952d164000 - 0xffffff99f9497000
+  . DATA  : 0xffffff99f9497000 - 0xffffffa05ee31000
+  Metadata: 0xffffffb054081000 - 0xffffffb074081000
+  Bitmaps : 0xffffffb074081000 - 0xffffffb07a081000
+  Extra   : 0 - 0
+
+last started kext at 7037546369: com.apple.driver.AppleFileSystemDriver	3.0.1 (addr 0xffffff8003e52000, size 8192)
+loaded kexts:
+as.acidanthera.voodoo.driver.PS2Keyboard	2.3.5
+me.kishorprins.VoodooInput	1.1.4
+com.alexandred.VoodooI2CHID	1
+com.dhinakg.USBToolBox.kext	1.1.1
+com.alexandred.VoodooI2C	2.8
+as.acidanthera.voodoo.driver.PS2Controller	2.3.5
+org.coolstar.VoodooGPIO	1.1
+org.rehabman.driver.NullEthernet	1.0.6
+as.vit9696.SMCProcessor	1.3.1
+as.vit9696.RestrictEvents	1.1.0
+as.lvs1974.ThunderboltFixup	1.0.0
+as.lvs1974.WMIDellSensors	1.3.1
+ru.usrsse2.SMCLightSensor	1.3.1
+ru.usrsse2.SMCBatteryManager	1.3.1
+as.vit9696.VirtualSMC	1.3.1
+as.lvs1974.HibernationFixup	1.4.8
+com.alexandred.VoodooI2CServices	1
+com.sicreative.VoltageShift	1.21
+as.vit9696.WhateverGreen	1.6.4
+as.vit9696.AppleALC	1.8.2
+as.lvs1974.DebugEnhancer	1.0.7
+org.lvs1974.driver.CpuTscSync	1.0.9
+as.vit9696.Lilu	1.6.4
+com.apple.driver.AppleFileSystemDriver	3.0.1
+com.apple.filesystems.tmpfs	1
+com.apple.filesystems.lifs	1
+com.apple.filesystems.hfs.kext	627.100.6
+com.apple.BootCache	40
+com.apple.AppleFSCompression.AppleFSCompressionTypeZlib	1.0.0
+com.apple.AppleFSCompression.AppleFSCompressionTypeDataless	1.0.0d1
+com.apple.driver.AppleSmartBatteryManager	161.0.0
+com.apple.driver.AppleTopCaseHIDEventDriver	6440.7
+com.apple.filesystems.apfs	2142.101.3
+com.apple.private.KextAudit	1.0
+com.apple.driver.AirPort.BrcmNIC	1400.1.1
+com.apple.driver.AppleAHCIPort	376
+com.apple.driver.AppleRTC	2.0.1
+com.apple.driver.AppleACPIButtons	6.1
+com.apple.driver.AppleACPIEC	6.1
+com.apple.driver.AppleSMBIOS	2.1
+com.apple.driver.AppleAPIC	1.7
+com.apple.security.AppleUserConsent	1
+com.apple.AppleSystemPolicy	2.0.0
+com.apple.nke.applicationfirewall	403
+com.apple.iokit.IOKitRegistryCompatibility	1
+com.apple.iokit.EndpointSecurity	1
+com.apple.Dont_Steal_Mac_OS_X	7.0.0
+com.apple.kec.Compression	1
+com.apple.kec.AppleEncryptedArchive	1
+com.apple.driver.AppleBSDKextStarter	3
+com.apple.iokit.IOSurface	336.40.12
+com.apple.filesystems.hfs.encodings.kext	1
+com.apple.driver.AppleSyntheticGameController	10.5.10
+com.apple.driver.usb.AppleUSBHostPacketFilter	1.0
+com.apple.iokit.IOUSBFamily	900.4.2
+com.apple.driver.AppleActuatorDriver	6440.7
+com.apple.driver.AppleMultitouchDriver	6440.7
+com.apple.driver.AppleInputDeviceSupport	6440.8
+com.apple.driver.AppleHSBluetoothDriver	6440.7
+com.apple.driver.IOBluetoothHIDDriver	9.0.0
+com.apple.driver.AppleXsanScheme	3
+com.apple.driver.AppleThunderboltNHI	7.2.81
+com.apple.iokit.IOThunderboltFamily	9.3.3
+com.apple.iokit.IONVMeFamily	2.1.0
+com.apple.iokit.IO80211FamilyLegacy	1200.12.2b1
+com.apple.driver.corecapture	1.0.4
+com.apple.iokit.IOAHCIFamily	301.100.1
+com.apple.driver.usb.AppleUSBXHCIPCI	1.2
+com.apple.driver.usb.AppleUSBXHCI	1.2
+com.apple.driver.AppleEFINVRAM	2.1
+com.apple.driver.AppleEFIRuntime	2.1
+com.apple.iokit.IOHIDFamily	2.0.0
+com.apple.iokit.IOSMBusFamily	1.1
+com.apple.iokit.IOTimeSyncFamily	1140.25
+com.apple.iokit.IOSkywalkFamily	1.0
+com.apple.driver.mDNSOffloadUserClient	1.0.1b8
+com.apple.iokit.IONetworkingFamily	3.4
+com.apple.driver.DiskImages	493.0.0
+com.apple.iokit.IOBluetoothFamily	9.0.0
+com.apple.iokit.IOReportFamily	47
+com.apple.security.quarantine	4
+com.apple.security.sandbox	300.0
+com.apple.kext.AppleMatch	1.0.0d1
+com.apple.driver.AppleSSE	1.0
+com.apple.driver.AppleKeyStore	2
+com.apple.driver.AppleUSBTDM	552
+com.apple.iokit.IOUSBMassStorageDriver	235.100.2
+com.apple.iokit.IOSCSIBlockCommandsDevice	482.100.4
+com.apple.iokit.IOStorageFamily	2.1
+com.apple.iokit.IOSCSIArchitectureModelFamily	482.100.4
+com.apple.driver.AppleFDEKeyStore	28.30
+com.apple.driver.AppleEffaceableStorage	1.0
+com.apple.driver.AppleCyrus	1
+com.apple.driver.AppleMobileFileIntegrity	1.0.5
+com.apple.security.AppleImage4	5.0.0
+com.apple.kext.CoreTrust	1
+com.apple.driver.AppleCredentialManager	1.0
+com.apple.iokit.CoreAnalyticsFamily	1
+com.apple.driver.KernelRelayHost	1
+com.apple.iokit.IOUSBHostFamily	1.2
+com.apple.driver.AppleUSBHostMergeProperties	1.2
+com.apple.driver.usb.AppleUSBCommon	1.0
+com.apple.driver.AppleBusPowerController	1.0
+com.apple.driver.AppleSEPManager	1.0.1
+com.apple.driver.IOSlaveProcessor	1
+com.apple.driver.AppleACPIPlatform	6.1
+com.apple.driver.AppleSMC	3.1.9
+com.apple.iokit.IOPCIFamily	2.9
+com.apple.iokit.IOACPIFamily	1.4
+com.apple.driver.watchdog	1
+com.apple.kec.pthread	1
+com.apple.kec.Libm	1
+com.apple.kec.corecrypto	12.0
