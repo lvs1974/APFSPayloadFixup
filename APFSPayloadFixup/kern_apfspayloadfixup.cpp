@@ -51,7 +51,7 @@ int APFSPayloadFx::vfs_mountroot()
 			DBGLOG("APFSPAYLOADFX", "vfs_mountroot can be called, payload and len are correct");
 			break;
 		}
-		DBGLOG("APFSPAYLOADFX", "vfs_mountroot can be called, payload = 0x%x, len = 0x%x",
+		DBGLOG("APFSPAYLOADFX", "vfs_mountroot cannot be called, payload = 0x%x, len = 0x%x",
 			   *callbackAPFSPayloadFx->gARV_payload_bytes, *callbackAPFSPayloadFx->gARV_payload_len);
 		IOSleep(100);
 	}
