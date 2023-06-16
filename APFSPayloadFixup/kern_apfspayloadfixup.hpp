@@ -11,6 +11,8 @@
 #include <Headers/kern_patcher.hpp>
 #include <stdatomic.h>
 
+#include <IOKit/IOService.h>
+
 class APFSPayloadFx {
 public:
 	bool init();
@@ -37,14 +39,21 @@ private:
 	 *  Hooked methods / callbacks
 	 */
 	static int vfs_mountroot();
+    static bool AppleAPFSContainer_start(IOService* service, IOService* provider);
+	static int64_t external_module_resources();
 	/**
 	 *  Original method
 	 */
 	mach_vm_address_t org_vfs_mountroot {};
+	mach_vm_address_t org_external_module_resources {};
+    mach_vm_address_t orgAppleAPFSContainer_start {};
 
 	
 	int64_t *gARV_payload_bytes {nullptr};
 	int64_t *gARV_payload_len   {nullptr};
+    
+    int64_t last_used_payload_bytes = 0;
+    int64_t last_payload_len = 0;
 };
 
 #endif /* kern_trimdisabler_hpp */
