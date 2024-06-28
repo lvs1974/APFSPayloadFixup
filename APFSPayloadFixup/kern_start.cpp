@@ -35,7 +35,7 @@ PluginConfiguration ADDPR(config) {
 	bootargBeta,
 	arrsize(bootargBeta),
 	KernelVersion::Sierra,
-	KernelVersion::Sonoma,
+	KernelVersion::Sequoia,
 	[]() {
 		apfs_payload_fx.init();
 	}
